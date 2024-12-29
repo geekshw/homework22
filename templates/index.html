@@ -1,10 +1,20 @@
-
 <!DOCTYPE html>
-<html lang="en">
-    <header>
-        <title>Geeks</title>
-    </header>
-    <body>
-        <h1>HELLO GEEKS!</h1>
-    </body>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Баннеры</title>
+</head>
+<body>
+    <h1>Баннеры</h1>
+    <div>
+        {% for banner in banners %}
+            <div>
+                <h2>{{ banner.title }}</h2>
+                <p>{{ banner.description }}</p>
+                <img src="{{ banner.image.url }}" alt="{{ banner.title }}">
+            </div>
+        {% endfor %}
+    </div>
+</body>
 </html>

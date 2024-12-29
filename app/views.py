@@ -1,5 +1,10 @@
 from django.shortcuts import render
-
-# Create your views here.
+from .models import Banner
 def app(request):
     return render(request , 'index.html')
+
+def banner_list(request):
+    banners = Banner.objects.all() 
+    return render(request, 'banner_list.html', {'banners': banners})
+
+
